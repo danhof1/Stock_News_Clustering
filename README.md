@@ -42,62 +42,48 @@ pip install pandas numpy scikit-learn matplotlib seaborn sentence-transformers n
 
 ```
 
-Usage
-Download Data: The notebook automatically downloads the news_headline_clustering.zip file containing news_curated.par, news_good.par, and news_bad.par upon execution.
+## Usage
 
-Run the Jupyter Notebook: Open the The_good,_the_bad,_and_the_cluster_Master_file.ipynb file in Jupyter Lab or Jupyter Notebook and run all cells.
+1.  **Download Data**: The notebook automatically downloads the `news_headline_clustering.zip` file containing `news_curated.par`, `news_good.par`, and `news_bad.par` upon execution.
+2.  **Run the Jupyter Notebook**: Open the `The_good,_the_bad,_and_the_cluster_Master_file.ipynb` file in Jupyter Lab or Jupyter Notebook and run all cells.
 
-Bash
+    ```bash
+    jupyter notebook
+    ```
+    or
+    ```bash
+    jupyter lab
+    ```
 
-jupyter notebook
-or
+    The notebook will execute the following steps:
+    - Load the datasets.
+    - Classify news categories.
+    - Generate sentence embeddings.
+    - Perform dimensionality reduction.
+    - Apply clustering algorithms.
 
-Bash
+## Data
 
-jupyter lab
-The notebook will execute the following steps:
-
-Load the datasets.
-
-Classify news categories.
-
-Generate sentence embeddings.
-
-Perform dimensionality reduction.
-
-Apply clustering algorithms.
-
-Data
-The project uses news headline data from the following parquet files, which are extracted from news_headline_clustering.zip:
-
-news_curated.par
-
-news_good.par
-
-news_bad.par
+The project uses news headline data from the following parquet files, which are extracted from `news_headline_clustering.zip`:
+- `news_curated.par`
+- `news_good.par`
+- `news_bad.par`
 
 These files primarily contain news titles used for classification and clustering.
 
-Models Used
-Text Classification: ilsilfverskiold/classify-news-category-iptc (Hugging Face Transformers)
+## Models Used
 
-Sentence Embedding: FinLang/finance-embeddings-investopedia (Sentence Transformers)
+-   **Text Classification**: `ilsilfverskiold/classify-news-category-iptc` (Hugging Face Transformers)
+-   **Sentence Embedding**: `FinLang/finance-embeddings-investopedia` (Sentence Transformers)
 
-Dependencies
+## Dependencies
+
 The key libraries required are:
-
-pandas
-
-numpy
-
-scikit-learn (for TF-IDF, KMeans, MiniBatchKMeans, metrics, TruncatedSVD, Normalizer, StandardScaler)
-
-matplotlib
-
-seaborn
-
-sentence_transformers
-
-nltk
-
-transformers
+-   `pandas`
+-   `numpy`
+-   `scikit-learn` (for TF-IDF, KMeans, MiniBatchKMeans, metrics, TruncatedSVD, Normalizer, StandardScaler)
+-   `matplotlib`
+-   `seaborn`
+-   `sentence_transformers`
+-   `nltk`
+-   `transformers`
