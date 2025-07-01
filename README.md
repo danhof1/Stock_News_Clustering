@@ -39,6 +39,9 @@ source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 
 # Install the required packages
 pip install pandas numpy scikit-learn matplotlib seaborn sentence-transformers nltk transformers
+
+```
+
 Usage
 Download Data: The notebook automatically downloads the news_headline_clustering.zip file containing news_curated.par, news_good.par, and news_bad.par upon execution.
 
