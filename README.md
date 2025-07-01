@@ -87,3 +87,33 @@ The key libraries required are:
 -   `sentence_transformers`
 -   `nltk`
 -   `transformers`
+
+## Results
+
+This project yielded several key results through its various stages of analysis and modeling:
+
+* **Sentiment Analysis**: Initial exploration into sentiment analysis using `mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis` indicated that most news headlines were classified as neutral, rendering sentiment analysis less useful for differentiating clusters within this specific dataset.
+
+* **News Category Classification**: The application of the `ilsilfverskiold/classify-news-category-iptc` model successfully classified news headlines into 15 distinct categories. The distribution of these categories revealed the predominant themes within the dataset, with "economy, business, and finance" being the most frequent category.
+
+    | News Category                              | Count |
+    | :----------------------------------------- | :---- |
+    | economy, business, and finance             | 1554  |
+    | science and technology                     | 487   |
+    | politics                                   | 380   |
+    | sport                                      | 138   |
+    | disaster, accident, and emergency incident | 132   |
+    | conflict, war and peace                    | 124   |
+    | arts, culture, entertainment and media     | 100   |
+    | environment                                | 77    |
+    | human interest                             | 74    |
+    | crime, law and justice                     | 73    |
+    | health                                     | 47    |
+    | society                                    | 18    |
+    | lifestyle and leisure                      | 12    |
+    | weather                                    | 9     |
+    | labour                                     | 6     |
+
+* **Dimensionality Reduction**: Using Truncated SVD, the dimensionality of the sentence embeddings was successfully reduced while retaining a high percentage of the original variance. Specifically, the model achieved an "Explained variance: 0.91" (91% of the variance) with 200 components, demonstrating effective feature compression for subsequent clustering.
+
+* **Clustering (Elbow Method)**: The notebook employed the Elbow Method to identify an optimal number of clusters for the news headlines based on their reduced-dimension embeddings, facilitating meaningful grouping of similar news content.
